@@ -4,58 +4,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>YouTube Video</title>
+    <title>GameVerse - Explore Game Worlds</title>
+    <style>
+        /* Reset and base styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://wallpapercave.com/wp/wp4923992.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Glass effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        header.header {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff4d4d;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            width: 200px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            border: none;
+            background: #ff4d4d;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .video {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .video-title {
+            margin-top: 15px;
+            font-size: 1.5rem;
+        }
+
+        .video-description {
+            margin-top: 10px;
+            color: #ccc;
+        }
+
+        .comments {
+            padding: 20px;
+        }
+
+        .comment {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: #ff4d4d;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header glass">
         <div class="container">
-            <div class="logo">Logo</div>
+            <div class="logo">GameVerse</div>
             <div class="search-bar">
-                <input type="text" placeholder="Search...">
+                <input type="text" placeholder="Search games...">
                 <button>Search</button>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <div class="video">
+        <div class="video glass">
             <iframe width="100%" height="500" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
                 allowfullscreen></iframe>
-            <h1 class="video-title">Amazing Video Title</h1>
-            <p class="video-description">Description of the amazing video goes here. It can be a brief summary of the
-                content.</p>
+            <h1 class="video-title">Top 10 Action Games of 2025</h1>
+            <p class="video-description">Discover the most thrilling action games you must play this year!</p>
         </div>
 
-        <div class="comments">
-            <h2>Comments</h2>
+        <div class="comments glass">
+            <h2>Player Comments</h2>
             <div class="comment">
                 <div class="user-avatar">A</div>
                 <div class="comment-content">
-                    <p><strong>User123:</strong> This video is awesome!</p>
+                    <p><strong>GamerGirl:</strong> This list is epic! 🔥</p>
                 </div>
             </div>
             <div class="comment">
                 <div class="user-avatar">B</div>
                 <div class="comment-content">
-                    <p><strong>JohnDoe:</strong> I love it! Great content!</p>
+                    <p><strong>NoobMaster69:</strong> Can’t believe I missed game #3!</p>
                 </div>
             </div>
-            <!-- More comments go here -->
         </div>
     </div>
 
-    <footer class="footer">
+    <footer class="footer glass">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Logo</div>
-                <div class="footer-links">
-                    <a href="#">Home</a>
-                    <a href="#">Trending</a>
-                    <a href="#">Subscriptions</a>
-                    <a href="#">Library</a>
-                </div>
+            <div class="footer-logo">GameVerse</div>
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Genres</a>
+                <a href="#">Top Charts</a>
+                <a href="#">Contact</a>
             </div>
         </div>
     </footer>
