@@ -4,28 +4,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GameVerse - Explore Game Worlds</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<title>AyuWeb - My Projects</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* ===== RESET ===== */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===== BASE ===== */
+/* BODY */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: url('https://wallpapercave.com/wp/wp4923992.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
-/* ===== GLASS EFFECT ===== */
+/* GLASS STYLE */
 .glass {
     background: rgba(255, 255, 255, 0.12);
     border-radius: 16px;
@@ -34,19 +31,17 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
     transition: transform 0.3s ease;
 }
-
 .glass:hover {
     transform: scale(1.02);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header {
     position: sticky;
     top: 0;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
 }
-
 .header-container {
     max-width: 1200px;
     margin: auto;
@@ -55,212 +50,151 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
 }
-
 .logo {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.8rem;
     font-weight: bold;
     color: #ff4d4d;
-    letter-spacing: 1px;
 }
-
-.search-bar {
+.nav-links {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-links a:hover {
+    color: #ff4d4d;
 }
 
-.search-bar input {
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-    width: 200px;
-    transition: width 0.3s ease;
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
 }
-
-.search-bar input:focus {
-    width: 250px;
-}
-
-.search-bar button {
-    padding: 10px 15px;
-    border: none;
-    background: linear-gradient(45deg, #ff4d4d, #ff7e7e);
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.search-bar button:hover {
-    background: linear-gradient(45deg, #ff7e7e, #ff4d4d);
-}
-
-/* ===== CONTENT ===== */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    flex: 1;
-}
-
-/* Video Card */
-.video {
-    overflow: hidden;
-}
-
-.video iframe {
-    border-radius: 16px;
-    width: 100%;
-    height: 500px;
-    transition: box-shadow 0.3s;
-}
-
-.video iframe:hover {
-    box-shadow: 0 0 25px rgba(255, 77, 77, 0.8);
-}
-
-.video-title {
-    margin-top: 15px;
-    font-size: 1.6rem;
+.hero h1 {
+    font-size: 2.5rem;
     font-family: 'Orbitron', sans-serif;
 }
-
-.video-description {
+.hero p {
     margin-top: 10px;
+    font-size: 1.1rem;
     color: #ddd;
 }
 
-/* Comments */
-.comments {
-    margin-top: 20px;
+/* PROJECTS GRID */
+.projects {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
-
-.comment {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 15px;
+.project-card {
+    padding: 15px;
+    text-align: center;
 }
-
-.user-avatar {
-    width: 45px;
-    height: 45px;
+.project-card img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s;
+}
+.project-card img:hover {
+    transform: scale(1.05);
+}
+.project-card h3 {
+    margin: 10px 0;
+}
+.project-card p {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
     background: linear-gradient(45deg, #ff4d4d, #ff7e7e);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
     font-weight: bold;
-    margin-right: 10px;
+    transition: background 0.3s;
+}
+.project-card a:hover {
+    background: linear-gradient(45deg, #ff7e7e, #ff4d4d);
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer {
     padding: 20px;
     text-align: center;
     background: rgba(0, 0, 0, 0.5);
 }
-
-.footer-links a {
-    margin: 0 10px;
-    text-decoration: none;
+footer p {
     color: #ccc;
-    transition: color 0.3s;
+    font-size: 0.9rem;
 }
 
-.footer-links a:hover {
-    color: #fff;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .search-bar {
-        width: 100%;
-        justify-content: space-between;
-    }
-    .search-bar input {
-        flex: 1;
-        width: 100%;
-    }
-    .search-bar button {
-        flex-shrink: 0;
-    }
-    .video iframe {
-        height: 300px;
-    }
-    .video-title {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.5rem;
-    }
-    .video iframe {
-        height: 220px;
-    }
-    .comment {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .user-avatar {
-        margin-bottom: 5px;
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
     }
 }
 </style>
 </head>
 
 <body>
-<header class="glass">
+
+<!-- HEADER -->
+<header>
     <div class="header-container">
-        <div class="logo">GameVerse</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search games...">
-            <button>Search</button>
-        </div>
+        <div class="logo">AyuWeb</div>
+        <nav class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </div>
 </header>
 
-<div class="container">
-    <div class="video glass">
-        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-        <h1 class="video-title">Top 10 Action Games of 2025</h1>
-        <p class="video-description">Discover the most thrilling action games you must play this year!</p>
-    </div>
+<!-- HERO -->
+<section class="hero glass">
+    <h1>Welcome to AyuWeb</h1>
+    <p>Showcasing my personal projects, games, and experiments.</p>
+</section>
 
-    <div class="comments glass">
-        <h2>Player Comments</h2>
-        <div class="comment">
-            <div class="user-avatar">A</div>
-            <div class="comment-content">
-                <p><strong>GamerGirl:</strong> This list is epic! 🔥</p>
-            </div>
-        </div>
-        <div class="comment">
-            <div class="user-avatar">B</div>
-            <div class="comment-content">
-                <p><strong>NoobMaster69:</strong> Can’t believe I missed game #3!</p>
-            </div>
-        </div>
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+    <div class="project-card glass">
+        <img src="https://via.placeholder.com/400x250" alt="Project 1">
+        <h3>Grow a Garden</h3>
+        <p>A relaxing farming simulation game made in Godot 4.4.</p>
+        <a href="#">View Project</a>
     </div>
-</div>
+    <div class="project-card glass">
+        <img src="https://via.placeholder.com/400x250" alt="Project 2">
+        <h3>Power the City</h3>
+        <p>HTML/JS strategy game where you manage power grids.</p>
+        <a href="#">View Project</a>
+    </div>
+    <div class="project-card glass">
+        <img src="https://via.placeholder.com/400x250" alt="Project 3">
+        <h3>BeastBoyShub FPS</h3>
+        <p>A dreamlike survival FPS inspired by Resident Evil 4.</p>
+        <a href="#">View Project</a>
+    </div>
+</section>
 
-<footer class="glass">
-    <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#">Genres</a>
-        <a href="#">Top Charts</a>
-        <a href="#">Contact</a>
-    </div>
+<!-- FOOTER -->
+<footer>
+    <p>© 2025 AyuWeb. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
