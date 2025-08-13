@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 /* BODY */
 body {
@@ -20,6 +15,7 @@ body {
     background: url('https://wallpapercave.com/wp/wp4923992.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
+    min-height: 100vh;
 }
 
 /* GLASS STYLE */
@@ -31,9 +27,64 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
     transition: transform 0.3s ease;
 }
-.glass:hover {
-    transform: scale(1.02);
+.glass:hover { transform: scale(1.02); }
+
+/* LOCK SCREEN */
+#lock-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.85);
+    z-index: 9999;
 }
+.lock-box {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    text-align: center;
+}
+.lock-box h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 15px;
+}
+.lock-box input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+.lock-box button {
+    padding: 10px 20px;
+    border: none;
+    background: linear-gradient(45deg, #ff4d4d, #ff7e7e);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.lock-box button:hover {
+    background: linear-gradient(45deg, #ff7e7e, #ff4d4d);
+}
+#error-msg {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    height: 18px;
+    margin-top: -5px;
+}
+
+/* SHAKE ANIMATION */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-8px); }
+    40%, 80% { transform: translateX(8px); }
+}
+.shake { animation: shake 0.4s; }
 
 /* HEADER */
 header {
@@ -67,26 +118,17 @@ header {
     font-weight: 500;
     transition: color 0.3s;
 }
-.nav-links a:hover {
-    color: #ff4d4d;
-}
+.nav-links a:hover { color: #ff4d4d; }
 
-/* HERO SECTION */
+/* HERO */
 .hero {
     text-align: center;
     padding: 60px 20px;
 }
-.hero h1 {
-    font-size: 2.5rem;
-    font-family: 'Orbitron', sans-serif;
-}
-.hero p {
-    margin-top: 10px;
-    font-size: 1.1rem;
-    color: #ddd;
-}
+.hero h1 { font-size: 2.5rem; font-family: 'Orbitron', sans-serif; }
+.hero p { margin-top: 10px; font-size: 1.1rem; color: #ddd; }
 
-/* PROJECTS GRID */
+/* PROJECTS */
 .projects {
     max-width: 1200px;
     margin: auto;
@@ -104,16 +146,9 @@ header {
     border-radius: 12px;
     transition: transform 0.3s;
 }
-.project-card img:hover {
-    transform: scale(1.05);
-}
-.project-card h3 {
-    margin: 10px 0;
-}
-.project-card p {
-    color: #ccc;
-    font-size: 0.9rem;
-}
+.project-card img:hover { transform: scale(1.05); }
+.project-card h3 { margin: 10px 0; }
+.project-card p { color: #ccc; font-size: 0.9rem; }
 .project-card a {
     display: inline-block;
     margin-top: 10px;
@@ -135,21 +170,25 @@ footer {
     text-align: center;
     background: rgba(0, 0, 0, 0.5);
 }
-footer p {
-    color: #ccc;
-    font-size: 0.9rem;
-}
+footer p { color: #ccc; font-size: 0.9rem; }
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
+    .hero h1 { font-size: 2rem; }
 }
 </style>
 </head>
-
 <body>
+
+<!-- LOCK SCREEN -->
+<div id="lock-screen">
+    <div class="lock-box glass">
+        <h2>🔒 Enter Password</h2>
+        <input type="password" id="password" placeholder="Password">
+        <div id="error-msg"></div>
+        <button onclick="checkPassword()">Unlock</button>
+    </div>
+</div>
 
 <!-- HEADER -->
 <header>
@@ -195,6 +234,23 @@ footer p {
 <footer>
     <p>© 2025 AyuWeb. All rights reserved.</p>
 </footer>
+
+<script>
+const correctPassword = "ayu123"; // 🔑 Set your password here
+
+function checkPassword() {
+    const input = document.getElementById("password");
+    const errorMsg = document.getElementById("error-msg");
+
+    if (input.value === correctPassword) {
+        document.getElementById("lock-screen").style.display = "none";
+    } else {
+        errorMsg.textContent = "Incorrect password!";
+        input.classList.add("shake");
+        setTimeout(() => input.classList.remove("shake"), 400);
+    }
+}
+</script>
 
 </body>
 </html>
